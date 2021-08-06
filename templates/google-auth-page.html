@@ -1,0 +1,18 @@
+{% load socialaccount %}
+{% load account %}
+{#need to load socialaccount and account for provider_login_url#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+Hi: {% user_display user %}
+<p>Please <a href="{% provider_login_url 'github' %}">Authenticate with GitHub</a></p>
+% else %}
+<p>Please <a href="{% provider_login_url 'github' %}">Authenticate with GitHub</a></p>
+{% endif %}
+</body>
+</html>
