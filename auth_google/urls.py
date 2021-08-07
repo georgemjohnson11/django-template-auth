@@ -23,6 +23,7 @@ from django.conf.urls import url
 urlpatterns = [
     path('', views.index, name='home'),
     path('admin/', admin.site.urls),
+    path('api/v1/users/', include('userProfile.urls')),
     re_path(r'^api/userProfiles/$', views.userProfile_list),
     re_path(r'^api/userProfiles/([0-9])$', views.userProfiles_detail),
     path('accounts/', include('allauth.urls')),

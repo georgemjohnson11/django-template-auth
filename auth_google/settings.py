@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth.registration',
     'userProfile'
 ]
 
@@ -84,6 +86,8 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+
+AUTH_USER_MODEL = "userProfile.UserProfile"
 
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
